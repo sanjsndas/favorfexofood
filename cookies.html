@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - Flavor Fexo Food</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --saffron: #FF9933;
+            --deep-red: #D22B2B;
+            --turmeric: #F4C430;
+            --spice-dark: #5E1914;
+            --light-bg: #FFF5E6;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--saffron);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--deep-red);
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        h1 {
+            color: var(--deep-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: var(--spice-dark);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        h2 {
+            color: var(--deep-red);
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--saffron);
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: var(--spice-dark);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        p, ul, ol {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .contact-point {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .contact-point h4 {
+            color: var(--saffron);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--spice-dark);
+            color: white;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cookie-consent p {
+            color: white;
+            margin-right: 20px;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .accept-btn {
+            background-color: var(--saffron);
+            color: white;
+        }
+        
+        .decline-btn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .accept-btn:hover {
+            background-color: var(--deep-red);
+        }
+        
+        .decline-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--spice-dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-info-footer {
+            text-align: left;
+            margin: 15px 0;
+        }
+        
+        .contact-info-footer p {
+            margin: 5px 0;
+            color: white;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Flavor Fexo Food</h1>
+        <p class="tagline">Quick Indian Bites, Full of Flavor</p>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <div class="main-content">
+            <h1>Cookie Policy</h1>
+            <p>Last Updated: June 30, 2023</p>
+            
+            <p>Welcome to Flavor Fexo Food's Cookie Policy. This document explains how we use cookies and similar tracking technologies on our website. By using our website, you consent to the use of cookies as described in this policy.</p>
+            
+            <h2>What Are Cookies?</h2>
+            <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the website owners.</p>
+            
+            <h2>How We Use Cookies</h2>
+            <p>We use cookies for various purposes, including:</p>
+            <ul>
+                <li>To enable certain functions of the website</li>
+                <li>To provide analytics about how visitors use our site</li>
+                <li>To store your preferences and personalize content</li>
+                <li>To improve the user experience</li>
+                <li>To deliver targeted advertisements</li>
+            </ul>
+            
+            <h2>Types of Cookies We Use</h2>
+            <h3>1. Essential Cookies</h3>
+            <p>These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you such as setting your privacy preferences, logging in, or filling in forms.</p>
+            
+            <h3>2. Performance Cookies</h3>
+            <p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us know which pages are the most and least popular and see how visitors move around the site.</p>
+            
+            <h3>3. Functional Cookies</h3>
+            <p>These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages.</p>
+            
+            <h3>4. Targeting Cookies</h3>
+            <p>These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisements on other sites.</p>
+            
+            <h2>Detailed Contact-Related Points Regarding Cookies</h2>
+            
+            <div class="contact-point">
+                <h4>1. Contact for Cookie Preferences</h4>
+                <p>If you wish to manage your cookie preferences, you can contact our data protection officer at privacy@flavorfexofood.com. We will guide you through the process of adjusting your cookie settings according to your preferences. Our team is available during business hours to assist with any queries related to cookie management.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>2. Reporting Cookie-Related Issues</h4>
+                <p>Should you encounter any issues related to cookies on our website, please report them to support@flavorfexofood.com. Include details such as the page where the issue occurred, your browser version, and any error messages you received. Our technical team will investigate and resolve the matter promptly.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>3. Questions About Cookie Policy</h4>
+                <p>For any questions regarding our cookie policy, you may call our customer service at +91 22 1234 5678 during working hours (9 AM to 6 PM, Monday to Friday). Our representatives will provide detailed explanations about our cookie usage, storage duration, and your rights regarding personal data collected through cookies.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>4. Third-Party Cookie Inquiries</h4>
+                <p>For information about third-party cookies used on our site, contact thirdparty@flavorfexofood.com. We maintain a list of all third-party services that place cookies through our website and can provide details about their data collection practices. You may also request information about how to opt-out of specific third-party cookies.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>5. Cookie Consent Withdrawal</h4>
+                <p>To withdraw your consent for non-essential cookies, email consent@flavorfexofood.com with your request. Please note that essential cookies cannot be disabled as they are necessary for website functionality. Upon receiving your request, we will guide you through the process of adjusting your cookie preferences.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>6. Data Subject Rights Regarding Cookies</h4>
+                <p>If you wish to exercise your rights under data protection laws concerning data collected via cookies, contact dpo@flavorfexofood.com. This includes rights to access, rectification, erasure, restriction of processing, data portability, and objection to processing. We will respond to your request within 30 days.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>7. Cookie Policy Updates Notification</h4>
+                <p>To be notified about updates to our cookie policy, subscribe to our policy updates mailing list by sending "Subscribe Cookie Policy" to updates@flavorfexofood.com. We will inform you whenever significant changes are made to our cookie practices, giving you the opportunity to review and adjust your preferences accordingly.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>8. Browser-Specific Cookie Instructions</h4>
+                <p>For guidance on managing cookies in specific browsers, contact browsersupport@flavorfexofood.com. Our team can provide step-by-step instructions for cookie management in Chrome, Firefox, Safari, Edge, and other popular browsers. We can also assist with mobile browser cookie settings upon request.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>9. Cookie-Related Complaints</h4>
+                <p>If you have complaints about our cookie practices, address them to complaints@flavorfexofood.com. Please include detailed information about your concern and any supporting documentation. We take all complaints seriously and will investigate thoroughly, providing a response within 14 business days.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>10. Enterprise Cookie Solutions</h4>
+                <p>Businesses requiring customized cookie solutions for bulk access to our services should contact enterprise@flavorfexofood.com. Our enterprise team can discuss volume licensing, API access, and customized cookie consent solutions tailored to your organizational needs and compliance requirements.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>11. Educational Resources About Cookies</h4>
+                <p>For educational materials about cookies and online tracking technologies, email education@flavorfexofood.com. We provide comprehensive guides, whitepapers, and presentation materials suitable for schools, businesses, and individual learning about digital privacy and cookie technology.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>12. Cookie Duration Inquiries</h4>
+                <p>Questions about how long specific cookies remain on your device can be directed to retention@flavorfexofood.com. We maintain detailed records of all cookies used on our site, including their purposes, durations, and whether they are first-party or third-party cookies.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>13. Cookie Security Concerns</h4>
+                <p>Report any security concerns related to our cookies to security@flavorfexofood.com. This includes suspected malicious cookies, unauthorized tracking, or any other security issues. Our security team will investigate immediately and take appropriate action to protect our users.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>14. Accessibility for Cookie Management</h4>
+                <p>Users needing accessible methods to manage cookies due to disabilities can contact accessibility@flavorfexofood.com. We provide alternative methods for cookie consent and management, including phone support and accessible documentation formats upon request.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>15. International Cookie Compliance</h4>
+                <p>For questions about how our cookie practices comply with international regulations (GDPR, CCPA, etc.), contact compliance@flavorfexofood.com. Our legal team can provide detailed information about our compliance with various jurisdictional requirements regarding cookies and online tracking.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>16. Cookie Performance Impact</h4>
+                <p>Technical questions about how cookies affect website performance can be sent to performance@flavorfexofood.com. Our developers can explain the technical aspects of cookie implementation and how we optimize their use to minimize impact on page load times and user experience.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>17. Marketing Cookie Opt-Out</h4>
+                <p>To opt out of marketing and advertising cookies specifically, email optout@flavorfexofood.com. We will provide instructions for disabling these cookies while maintaining functionality cookies that don't involve tracking for advertising purposes.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>18. Cookie Audit Requests</h4>
+                <p>Organizations requiring cookie audits for compliance purposes should contact audits@flavorfexofood.com. We can provide detailed reports about the cookies used on our site, their purposes, and data collection practices to assist with your compliance documentation needs.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>19. Historical Cookie Policy Versions</h4>
+                <p>Requests for previous versions of our cookie policy can be sent to policyarchive@flavorfexofood.com. We maintain archives of all policy versions with effective dates, allowing you to track changes over time for compliance or research purposes.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>20. Cookie-Related Research Participation</h4>
+                <p>Researchers interested in studying our cookie practices may contact research@flavorfexofood.com. We occasionally collaborate with academic and industry researchers to improve privacy practices and may provide anonymized, aggregate data about cookie usage with appropriate safeguards.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>21. Cookie Implementation for Developers</h4>
+                <p>Developers with technical questions about our cookie implementation can email devsupport@flavorfexofood.com. Our engineering team can provide technical documentation about our cookie architecture and best practices for integration with our services.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>22. Cookie Preferences for Registered Users</h4>
+                <p>Registered users needing help with account-specific cookie settings should contact accounthelp@flavorfexofood.com. We can assist with managing preferences that are tied to your user account and persist across devices and sessions when logged in.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>23. Cookie Impact on Website Features</h4>
+                <p>Questions about how disabling certain cookies affects website functionality can be sent to features@flavorfexofood.com. We can explain which features rely on specific cookies and suggest alternatives when available for essential functionality.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>24. Cookie Consent for Minors</h4>
+                <p>Parents or guardians with questions about cookie consent for minors should contact minors@flavorfexofood.com. We comply with all regulations regarding data collection from minors and can provide special assistance for managing children's privacy on our site.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>25. Cookie-Related Legal Requests</h4>
+                <p>Law enforcement or legal professionals with requests related to cookie data should contact legal@flavorfexofood.com. All such requests must include proper documentation and will be handled in accordance with applicable laws and our privacy policy.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>26. Cookie Usage Analytics</h4>
+                <p>For aggregated, anonymized statistics about cookie usage on our site, email analytics@flavorfexofood.com. We can provide high-level insights about cookie acceptance rates, preference trends, and other non-personal analytics data.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>27. Enterprise Cookie Compliance</h4>
+                <p>Business customers needing documentation for their own compliance regarding our cookie practices should contact businesscompliance@flavorfexofood.com. We provide enterprise-specific documentation packages tailored to various regulatory frameworks.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>28. Cookie Testing Participation</h4>
+                <p>Users interested in participating in cookie-related user testing can email testing@flavorfexofood.com. We occasionally conduct user research to improve our cookie consent interface and preference management tools.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>29. Cookie Storage Technical Details</h4>
+                <p>Technical questions about how cookies are stored and processed can be sent to techdetails@flavorfexofood.com. Our engineering team can explain the technical specifications of our cookie implementation, including storage methods, encryption, and data handling.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>30. Cross-Device Cookie Tracking</h4>
+                <p>Questions about cross-device tracking using cookies should be directed to crossdevice@flavorfexofood.com. We can explain whether and how we use cookies to recognize users across different devices and the controls available to manage this.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>31. Cookie-Related Partnerships</h4>
+                <p>Companies interested in partnership opportunities related to cookie technology can email partnerships@flavorfexofood.com. We explore collaborations that enhance privacy while maintaining website functionality and user experience.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>32. Cookie Policy Translations</h4>
+                <p>For translated versions of our cookie policy, contact translations@flavorfexofood.com. We provide official translations in several languages and can arrange for additional translations upon request for enterprise customers.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>33. Cookie Impact on Accessibility Features</h4>
+                <p>Users concerned about how cookies interact with accessibility features should email accessibility@flavorfexofood.com. We ensure our cookie implementation doesn't interfere with assistive technologies and can provide guidance on optimal settings.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>34. Cookie Expiration Notifications</h4>
+                <p>To receive notifications when important cookies are about to expire, email notifications@flavorfexofood.com. This service is particularly useful for maintaining uninterrupted access to certain features that rely on persistent authentication cookies.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>35. Cookie-Related Training</h4>
+                <p>Organizations seeking training for their staff about cookie management and compliance can contact training@flavorfexofood.com. We offer customized training sessions covering technical, legal, and user experience aspects of cookie implementation.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>36. Cookie Implementation Best Practices</h4>
+                <p>Web developers looking for guidance on cookie implementation best practices can email bestpractices@flavorfexofood.com. Our team shares insights learned from our own implementation to help others achieve compliance while maintaining good user experience.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>37. Cookie-Related Press Inquiries</h4>
+                <p>Members of the press with questions about our cookie practices should contact press@flavorfexofood.com. Our communications team can provide official statements, arrange interviews with subject matter experts, and supply relevant background materials.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>38. Cookie Technology Innovations</h4>
+                <p>For information about our innovations in cookie technology and privacy-preserving alternatives, email innovation@flavorfexofood.com. We invest in research to develop solutions that balance functionality with user privacy.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>39. Cookie-Related Feedback</h4>
+                <p>General feedback about our cookie implementation can be sent to feedback@flavorfexofood.com. We welcome suggestions for improving our cookie consent interface, policy clarity, and user control options.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>40. Emergency Cookie Issues</h4>
+                <p>For urgent cookie-related issues affecting site security or critical functionality, call our emergency line at +91 22 9876 5432. This line is monitored 24/7 for genuine emergencies related to security vulnerabilities or widespread service disruptions caused by cookie-related issues.</p>
+            </div>
+            
+            <h2>Managing Cookies</h2>
+            <p>Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit <a href="https://www.aboutcookies.org/" target="_blank">www.aboutcookies.org</a> or <a href="https://www.allaboutcookies.org/" target="_blank">www.allaboutcookies.org</a>.</p>
+            
+            <h2>Changes to This Cookie Policy</h2>
+            <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our data use practices. We will notify you of any significant changes by posting a notice on our website or contacting you directly when required by law.</p>
+            
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Cookie Policy, please contact us:</p>
+            <ul>
+                <li>By email: privacy@flavorfexofood.com</li>
+                <li>By phone: +91 22 1234 5678</li>
+                <li>By mail: 123 Spice Lane, Mumbai, Maharashtra 400001, India</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Policy</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                
+                <div class="contact-info-footer">
+                    <p>Flavor Fexo Food</p>
+                    <p>123 Spice Lane, Mumbai</p>
+                    <p>Maharashtra 400001, India</p>
+                    <p>Phone: +91 22 1234 5678</p>
+                    <p>Email: info@flavorfexofood.com</p>
+                </div>
+            </div>
+            
+            <p class="copyright">© 2023 Flavor Fexo Food. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <div class="cookie-consent" id="cookieConsent">
+        <p>We use cookies to enhance your experience on our website. By continuing to browse, you agree to our use of cookies. Learn more in our <a href="cookies.html" style="color: var(--saffron);">Cookie Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn accept-btn" id="acceptCookies">Accept</button>
+            <button class="cookie-btn decline-btn" id="declineCookies">Decline</button>
+        </div>
+    </div>
+    
+    <script>
+        // Cookie Consent Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptCookies = document.getElementById('acceptCookies');
+            const declineCookies = document.getElementById('declineCookies');
+            
+            // Check if cookie consent was already given
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieConsent.style.display = 'flex';
+            }
+            
+            // Accept cookies
+            acceptCookies.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.style.display = 'none';
+                // Here you would typically load your analytics/tracking scripts
+            });
+            
+            // Decline cookies
+            declineCookies.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.style.display = 'none';
+                // Here you would typically disable non-essential cookies
+            });
+        });
+    </script>
+</body>
+</html>

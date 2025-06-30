@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavor Fexo Food - Quick Indian Bites, Full of Flavor</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --saffron: #FF9933;
+            --deep-red: #D22B2B;
+            --turmeric: #F4C430;
+            --spice-dark: #5E1914;
+            --light-bg: #FFF5E6;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--saffron);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--deep-red);
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        h1 {
+            color: var(--deep-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: var(--spice-dark);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        /* Recipe Categories */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .category-tab {
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--saffron);
+        }
+        
+        .category-tab:hover,
+        .category-tab.active {
+            background-color: var(--saffron);
+            color: white;
+        }
+        
+        /* Recipe Grid */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .recipe-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .recipe-card:hover .recipe-img img {
+            transform: scale(1.05);
+        }
+        
+        .recipe-content {
+            padding: 20px;
+        }
+        
+        .recipe-title {
+            color: var(--deep-red);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .recipe-desc {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .recipe-link {
+            display: inline-block;
+            background-color: var(--saffron);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .recipe-link:hover {
+            background-color: var(--deep-red);
+        }
+        
+        /* Cooking Tips */
+        .tips-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tips-section h2 {
+            color: var(--deep-red);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--turmeric);
+        }
+        
+        .tip-card h3 {
+            color: var(--spice-dark);
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--spice-dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+       <header class="container">
+        <h1>Flavor Fexo Food</h1>
+        <p class="tagline">Quick Indian Bites, Full of Flavor</p>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+    
+    <main class="container">
+        <div class="category-tabs">
+            <div class="category-tab active">All Recipes</div>
+            <div class="category-tab">Street Food</div>
+            <div class="category-tab">Curries</div>
+            <div class="category-tab">Snacks</div>
+            <div class="category-tab">Desserts</div>
+            <div class="category-tab">Quick Meals</div>
+        </div>
+        
+        <div class="recipe-grid">
+            <!-- Original 10 Recipes -->
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r1.webp" alt="Butter Chicken">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Butter Chicken</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 20 mins</span>
+                        <span>Cook: 30 mins</span>
+                    </div>
+                    <p class="recipe-desc">Creamy, tomato-based curry with tender chicken pieces, a North Indian favorite.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r3.webp" alt="Masala Dosa">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Masala Dosa</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 10 mins</span>
+                        <span>Cook: 15 mins</span>
+                    </div>
+                    <p class="recipe-desc">Crispy rice crepe filled with spiced potato mixture, served with coconut chutney.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r2.webp" alt="Pav Bhaji">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Pav Bhaji</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 15 mins</span>
+                        <span>Cook: 25 mins</span>
+                    </div>
+                    <p class="recipe-desc">Mumbai's famous street food - spiced vegetable mash served with buttered buns.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r4.webp" alt="Hyderabadi Biryani">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Hyderabadi Biryani</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 30 mins</span>
+                        <span>Cook: 50 mins</span>
+                    </div>
+                    <p class="recipe-desc">Fragrant rice layered with marinated chicken and cooked to perfection.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r5.webp" alt="Chole Bhature">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Chole Bhature</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 20 mins</span>
+                        <span>Cook: 30 mins</span>
+                    </div>
+                    <p class="recipe-desc">Spicy chickpea curry served with deep-fried bread, a Punjabi classic.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r6.webp" alt="Vada Pav">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Vada Pav</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 15 mins</span>
+                        <span>Cook: 20 mins</span>
+                    </div>
+                    <p class="recipe-desc">Mumbai's answer to the burger - spicy potato patty in a bun with chutneys.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r7.webp" alt="Idli Sambar">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Idli Sambar</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 10 mins</span>
+                        <span>Cook: 20 mins</span>
+                    </div>
+                    <p class="recipe-desc">Soft steamed rice cakes served with lentil-based vegetable stew.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r8.webp" alt="Paneer Tikka">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Paneer Tikka</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 15 mins</span>
+                        <span>Cook: 15 mins</span>
+                    </div>
+                    <p class="recipe-desc">Marinated cottage cheese grilled to perfection, a vegetarian delight.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r9.webp" alt="Dal Tadka">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Dal Tadka</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 10 mins</span>
+                        <span>Cook: 25 mins</span>
+                    </div>
+                    <p class="recipe-desc">Tempered lentil curry that's both comforting and packed with flavor.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+            <div class="recipe-card">
+                <div class="recipe-img">
+                    <img src="r10.webp" alt="Gulab Jamun">
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Gulab Jamun</h3>
+                    <div class="recipe-meta">
+                        <span>Prep: 20 mins</span>
+                        <span>Cook: 20 mins</span>
+                    </div>
+                    <p class="recipe-desc">Soft, melt-in-mouth milk balls soaked in sugar syrup, a beloved dessert.</p>
+                    <a href="#" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+            
+        </div>   
+        <!-- Cooking Tips Section -->
+        <div class="tips-section">
+            <h2>Cooking Tips for Indian Recipes</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Spice Blooming</h3>
+                    <p>Always bloom whole spices in hot oil first to release their essential oils and maximize flavor.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Onion Browning</h3>
+                    <p>Cook onions until golden brown for curries - this adds depth of flavor and natural sweetness.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Ginger-Garlic Paste</h3>
+                    <p>Use fresh ginger-garlic paste instead of powder for authentic taste in Indian dishes.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Yogurt in Curries</h3>
+                    <p>Add yogurt at room temperature and stir continuously to prevent curdling in creamy curries.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Rice Perfection</h3>
+                    <p>For perfect basmati rice, soak for 30 mins before cooking and use 1:1.5 rice to water ratio.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Tempering (Tadka)</h3>
+                    <p>Add tempering at the end for dal and curries to preserve the aromatic flavors of spices.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Marination Time</h3>
+                    <p>For tandoori dishes, marinate for at least 4 hours (overnight is best) for maximum flavor.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Roasting Spices</h3>
+                    <p>Dry roast whole spices before grinding to enhance their aroma and flavor in spice blends.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookies.html">Cookie Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <p class="copyright">© 2023 Flavor Fexo Food. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

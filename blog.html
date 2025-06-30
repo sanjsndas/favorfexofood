@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavor Fexo Food Blog - Indian Cooking Tips & Stories</title>
+    <style>
+        /* Base Styles (consistent with main site) */
+        :root {
+            --saffron: #FF9933;
+            --deep-red: #D22B2B;
+            --turmeric: #F4C430;
+            --spice-dark: #5E1914;
+            --light-bg: #FFF5E6;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--saffron);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--deep-red);
+        }
+        
+        /* Header */
+        .blog-header {
+            text-align: center;
+            padding: 40px 0 30px;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://source.unsplash.com/random/1200x400/?indian-spices') no-repeat center center;
+            background-size: cover;
+            margin-bottom: 40px;
+        }
+        
+        .blog-header h1 {
+            color: var(--deep-red);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .blog-header p {
+            color: var(--spice-dark);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Content */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        /* Main Articles */
+        .main-articles {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .post-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-post:hover .post-image img {
+            transform: scale(1.05);
+        }
+        
+        .post-content {
+            padding: 30px;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .post-tag {
+            background-color: var(--light-bg);
+            color: var(--deep-red);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .post-title {
+            color: var(--deep-red);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        .read-more {
+            display: inline-block;
+            background-color: var(--saffron);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: var(--deep-red);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: var(--deep-red);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+        
+        .popular-posts {
+            margin-bottom: 30px;
+        }
+        
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-bg);
+        }
+        
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .popular-post img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .popular-post h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .popular-post .post-date {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+        
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-bg);
+        }
+        
+        .categories-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .categories-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+        }
+        
+        .categories-list a:hover {
+            color: var(--deep-red);
+        }
+        
+        /* Newsletter */
+        .newsletter-form {
+            margin-top: 30px;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .newsletter-form button {
+            width: 100%;
+            background-color: var(--saffron);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--deep-red);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--spice-dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <h1>Flavor Fexo Food Blog</h1>
+            <p>Discover the stories behind the flavors, cooking techniques, and culinary traditions of India</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    
+    <main class="container">
+        <div class="blog-container">
+            <div class="main-articles">
+                <!-- Featured Blog Post -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="b1.webp" alt="Indian Street Food">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>June 15, 2023</span>
+                            <span class="post-tag">Street Food</span>
+                        </div>
+                        <h2 class="post-title">The Vibrant World of Indian Street Food: A Flavor Journey</h2>
+                        <p class="post-excerpt">Explore the bustling streets of Mumbai, Delhi, and Kolkata through their iconic street foods. From the tangy pani puri to the spicy vada pav, discover how these quick bites became national treasures and how you can recreate authentic flavors at home.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                
+                <!-- Second Blog Post -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="b2.webp" alt="Indian Spices">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>June 8, 2023</span>
+                            <span class="post-tag">Cooking Tips</span>
+                        </div>
+                        <h2 class="post-title">Mastering Indian Spices: A Beginner's Guide to Building Flavor</h2>
+                        <p class="post-excerpt">Learn how to properly store, toast, and blend spices to create authentic Indian flavors in your kitchen. We break down the essential spices every home cook needs and how to use them in everyday cooking.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                
+                <!-- Third Blog Post -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="b3.webp" alt="Indian Festival Food">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span>June 1, 2023</span>
+                            <span class="post-tag">Festival Foods</span>
+                        </div>
+                        <h2 class="post-title">Festival Feasts: Traditional Indian Sweets and Their Cultural Significance</h2>
+                        <p class="post-excerpt">Dive into the world of mithai (Indian sweets) and discover how dishes like gulab jamun, jalebi, and barfi are intertwined with Indian festivals and celebrations. Plus, get our simplified recipes for these traditional treats.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="popular-posts">
+                    <h3>Popular Posts</h3>
+                    <div class="popular-post">
+                      
+                        <div>
+                            <h4>The Art of Tandoori Cooking at Home</h4>
+                            <span class="post-date">May 25, 2023</span>
+                        </div>
+                    </div>
+                    <div class="popular-post">
+                        
+                        <div>
+                            <h4>10 Quick Indian Breakfasts for Busy Mornings</h4>
+                            <span class="post-date">May 18, 2023</span>
+                        </div>
+                    </div>
+                    <div>
+                            <h4>Protein-Packed Vegetarian Indian Meals</h4>
+                            <span class="post-date">May 10, 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Street Food</a></li>
+                        <li><a href="#">Regional Cuisines</a></li>
+                        <li><a href="#">Cooking Techniques</a></li>
+                        <li><a href="#">Festival Specials</a></li>
+                        <li><a href="#">Quick Meals</a></li>
+                        <li><a href="#">Spice Guides</a></li>
+                        <li><a href="#">Vegetarian Delights</a></li>
+                    </ul>
+                </div>
+                
+                <div class="newsletter-form">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get the latest recipes and stories delivered to your inbox</p>
+                    <form>
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookies.html">Cookie Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <p class="copyright">© 2023 Flavor Fexo Food. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
